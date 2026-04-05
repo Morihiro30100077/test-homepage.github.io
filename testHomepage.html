@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TEST Consulting</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#C9A84C;--gold-d:rgba(201,168,76,0.15);
+  --dark:#090909;--dark2:#101010;--dark3:#181818;
+  --text:#EDE9E3;--muted:#7A7870;--border:rgba(201,168,76,0.18);
+}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.4rem 5rem;
+  background:rgba(9,9,9,0.9);backdrop-filter:blur(14px);
+  border-bottom:0.5px solid var(--border);
+}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;letter-spacing:0.2em;color:var(--gold)}
+.nav-links{display:flex;gap:2.5rem}
+.nav-links a{font-size:0.73rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.3s}
+.nav-links a:hover{color:var(--gold)}
+
+.divider{height:0.5px;background:linear-gradient(to right,transparent,var(--border) 20%,var(--border) 80%,transparent)}
+
+.sec{padding:8rem 5rem}
+.sec-dark{background:var(--dark2)}
+.sec-label{font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:3rem;display:flex;align-items:center;gap:0.8rem}
+.sec-label::after{content:'';width:40px;height:0.5px;background:var(--gold);display:block}
+
+.info-wrap{max-width:780px;margin:0 auto}
+.info-table{width:100%;border-collapse:collapse}
+.info-table tr{border-bottom:0.5px solid var(--border)}
+.info-table tr:first-child{border-top:0.5px solid var(--border)}
+.info-table td{padding:1.4rem 0;font-size:0.9rem;vertical-align:top}
+.info-table td:first-child{
+  width:180px;font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gold);padding-right:2rem;white-space:nowrap;padding-top:1.65rem;
+}
+.info-table td:last-child{color:var(--muted);line-height:1.9}
+
+.map-ph{
+  margin-top:3rem;height:160px;border:0.5px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--muted);font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;
+  position:relative;overflow:hidden;
+}
+.map-ph::before{
+  content:'';position:absolute;inset:0;
+  background:
+    repeating-linear-gradient(0deg,transparent,transparent 39px,var(--border) 39px,var(--border) 40px),
+    repeating-linear-gradient(90deg,transparent,transparent 79px,var(--border) 79px,var(--border) 80px);
+}
+.map-pin{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:0.5rem}
+.pin-dot{width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px var(--gold-d)}
+
+.btn{
+  display:inline-flex;align-items:center;gap:1rem;
+  padding:0.9rem 2.2rem;
+  border:0.5px solid var(--gold);color:var(--gold);
+  font-family:'DM Sans',sans-serif;font-size:0.73rem;letter-spacing:0.14em;text-transform:uppercase;
+  background:transparent;cursor:pointer;transition:all 0.3s;text-decoration:none;
+}
+.btn:hover{background:var(--gold);color:var(--dark)}
+.btn-arrow{transition:transform 0.3s}
+.btn:hover .btn-arrow{transform:translateX(5px)}
+
+footer{
+  border-top:0.5px solid var(--border);
+  padding:2rem 5rem;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.f-logo{font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:1.1rem;letter-spacing:0.15em}
+.f-copy{font-size:0.72rem;color:var(--muted)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.fu{animation:fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) both}
+.fu:nth-child(1){animation-delay:0.1s}
+.fu:nth-child(2){animation-delay:0.25s}
+.fu:nth-child(3){animation-delay:0.4s}
+
+@media(max-width:860px){
+  nav{padding:1.2rem 1.5rem}.nav-links{display:none}
+  .sec{padding:5rem 1.5rem}
+  .info-table td:first-child{width:110px;font-size:0.62rem}
+  footer{flex-direction:column;gap:1rem;padding:1.5rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">TEST</div>
+  <div class="nav-links">
+    <a href="#info">Company</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- COMPANY INFO -->
+<section class="sec" id="info" style="padding-top:10rem">
+  <p class="sec-label fu">Company Information</p>
+  <div class="info-wrap fu">
+    <table class="info-table">
+      <tr><td>会社名</td><td>TEST株式会社 / TEST Consulting Inc.</td></tr>
+      <tr><td>設立</td><td>20XX年XX月XX日</td></tr>
+      <tr><td>代表取締役</td><td>XXXX</td></tr>
+      <tr><td>資本金</td><td>XXXX万円</td></tr>
+      <tr><td>事業内容</td><td>海外進出コンサルティング<br>インバウンドビジネス支援<br>クロスボーダー M&amp;A アドバイザリー</td></tr>
+      <tr><td>所在地</td><td>〒XXX-XXXX　東京都XXXXXXXXXX</td></tr>
+      <tr><td>電話番号</td><td>XX-XXXX-XXXX</td></tr>
+      <tr><td>Email</td><td>xxxx@xxxx.xx</td></tr>
+    </table>
+    <div class="map-ph">
+      <div class="map-pin">
+        <div class="pin-dot"></div>
+        <span>Tokyo, Japan</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section class="sec sec-dark" id="contact" style="text-align:center">
+  <p class="sec-label fu" style="justify-content:center">Contact</p>
+  <h2 class="fu" style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;margin-bottom:1.2rem">お気軽にお問い合わせください</h2>
+  <p class="fu" style="color:var(--muted);font-size:0.9rem;line-height:1.9;margin-bottom:3rem">
+    ビジネスのご相談・資料のご請求など、まずはお気軽にご連絡ください。<br>
+    担当者より2営業日以内にご返信いたします。
+  </p>
+  <a class="btn fu" href="mailto:xxxx@xxxx.xx" style="margin:0 auto">
+    メールで問い合わせる <span class="btn-arrow">→</span>
+  </a>
+</section>
+
+<footer>
+  <div class="f-logo">TEST</div>
+  <div class="f-copy">&copy; 20XX TEST Consulting Inc. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
